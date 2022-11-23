@@ -12,9 +12,10 @@ COPY ./Pipfile.* /opt/
 WORKDIR /opt/
 
 RUN pipenv --python 3.11
-RUN pipenv install
+RUN pipenv -v sync
 
 COPY ./ /opt
+
 
 
 CMD ["sh", "/opt/entrypoint.sh"]

@@ -2,12 +2,14 @@ version: "3.5"
 
 services:
 
-  bots_party:
-    container_name: bots_party
+  sanic_template:
+    container_name: sanic_template
     restart: always
-    image: bots_party:latest
+    image: sanic_template:latest
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "8801:8001"
+    environment:
+      - VAR1=${VAR1}
